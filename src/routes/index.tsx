@@ -1,52 +1,43 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Experience } from "@/components/Experience";
+import { Education } from "@/components/Education";
+import { Skills } from "@/components/Skills";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
+
 export const Route = createFileRoute("/")({
   component: Index,
-
   head: () => ({
-    title: "Ayesha Liaqat — B.Ed Qualified Teacher | Lahore",
-
     meta: [
+      { title: "Ayesha Liaqat — B.Ed Qualified Teacher | Lahore" },
       {
         name: "description",
         content:
           "Portfolio of Ayesha Liaqat, a B.Ed qualified teacher in Lahore with 1.5+ years of experience teaching Grade 7 & 8 students.",
       },
-
-      {
-        name: "keywords",
-        content:
-          "Ayesha Liaqat, Teacher in Lahore, B.Ed teacher, Grade 7 teacher, Grade 8 teacher, Lahore educator",
-      },
-
-      {
-        name: "author",
-        content: "Ayesha Liaqat",
-      },
-
-      {
-        property: "og:title",
-        content: "Ayesha Liaqat — B.Ed Qualified Teacher",
-      },
-
+      { property: "og:title", content: "Ayesha Liaqat — B.Ed Qualified Teacher" },
       {
         property: "og:description",
-        content:
-          "Dedicated educator passionate about lesson planning, classroom management, and student development.",
-      },
-
-      {
-        property: "og:type",
-        content: "website",
-      },
-
-      {
-        property: "og:locale",
-        content: "en_PK",
-      },
-
-      {
-        name: "twitter:card",
-        content: "summary_large_image",
+        content: "Dedicated educator passionate about lesson planning, classroom management, and student development.",
       },
     ],
   }),
 });
+
+function Index() {
+  return (
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      <Hero />
+      <About />
+      <Experience />
+      <Education />
+      <Skills />
+      <Contact />
+      <Footer />
+    </main>
+  );
+}
